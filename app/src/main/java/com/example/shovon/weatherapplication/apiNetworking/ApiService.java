@@ -4,23 +4,24 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import static com.example.shovon.weatherapplication.apiNetworking.ApiEndPoint.BASE_URL;
+
 /**
  * Created by SHOVON on 1/9/2018.
  */
 
 public class ApiService {
 
-    OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
+    private static Retrofit retrofit = null;
 
-    Retrofit.Builder builder =
-            new Retrofit.Builder()
-            .baseUrl(ApiEndPoint.BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create());
 
-    Retrofit retrofit =
-            builder
-            .client(httpClient.build())
-            .build();
-
-ApiClient client = retrofit.create(ApiClient.class);
+    public static Retrofit getClient() {
+        if (retrofit == null) {
+            retrofit = new Retrofit.Builder()
+                    .baseUrl(BASE_URL)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+        }
+        return retrofit;
+    }
 }
