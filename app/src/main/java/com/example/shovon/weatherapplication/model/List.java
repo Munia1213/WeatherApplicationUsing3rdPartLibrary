@@ -3,6 +3,8 @@ package com.example.shovon.weatherapplication.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 /**
  * Created by McGyver on 1/9/2018.
  */
@@ -16,7 +18,7 @@ public class List {
     private Main main;
     @SerializedName("weather")
     @Expose
-    private java.util.List<Weather> weather = null;
+    private ArrayList<Weather> weather;
     @SerializedName("clouds")
     @Expose
     private Clouds clouds;
@@ -46,11 +48,11 @@ public class List {
         this.main = main;
     }
 
-    public java.util.List<Weather> getWeather() {
+    public ArrayList<Weather> getWeather() {
         return weather;
     }
 
-    public void setWeather(java.util.List<Weather> weather) {
+    public void setWeather(ArrayList<Weather> weather) {
         this.weather = weather;
     }
 

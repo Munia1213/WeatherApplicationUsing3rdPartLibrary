@@ -3,6 +3,8 @@ package com.example.shovon.weatherapplication.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 /**
  * Created by McGyver on 1/9/2018.
  */
@@ -19,7 +21,7 @@ public class WeatherData {
     private Integer cnt;
     @SerializedName("list")
     @Expose
-    private List list = null;
+    private ArrayList<List> list;
     @SerializedName("city")
     @Expose
     private City city;
@@ -48,11 +50,11 @@ public class WeatherData {
         this.cnt = cnt;
     }
 
-    public List getList() {
+    public ArrayList<List> getList() {
         return list;
     }
 
-    public void setList(List list) {
+    public void setList(ArrayList<List> list) {
         this.list = list;
     }
 
