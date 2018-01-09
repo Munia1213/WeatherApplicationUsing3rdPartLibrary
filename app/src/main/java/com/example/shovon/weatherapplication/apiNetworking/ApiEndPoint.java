@@ -7,4 +7,6 @@ package com.example.shovon.weatherapplication.apiNetworking;
 public class ApiEndPoint {
 
     public static final String BASE_URL = "http://api.openweathermap.org/";
+
+    public static final String API_KEY = "e842bad857fc2320feebce44eca57e2f";
 }

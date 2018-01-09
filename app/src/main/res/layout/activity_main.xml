@@ -4,13 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:orientation="vertical"
     tools:context="com.example.shovon.weatherapplication.MainActivity">
 
-    <Button
+    <RelativeLayout
+        android:id="@+id/currentWeatherRL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/cityTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dhaka"
+            android:textSize="24sp"
+            android:textColor="#000000"
+            android:layout_margin="40dp"/>
+
+        <TextView
+            android:id="@+id/tempTV"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="24C"
+            android:textSize="48sp"
+            android:textColor="#1563e1"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="56dp"/>
+
+            <include
+                android:id="@+id/weatherValuesRL"
+                android:layout_below="@+id/tempTV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
+                layout="@layout/current_weather_values"
+                />
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
         android:id="@+id/clickBtn"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="click me!"/>
+        android:layout_weight="1">
+
+        <include
+            android:id="@+id/weatherValuesRL"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            layout="@layout/five_days_weather"
+            />
+
+
+    </RelativeLayout>
+
+
+
+
 
 </LinearLayout>

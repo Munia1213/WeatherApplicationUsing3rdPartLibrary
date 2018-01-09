@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/todayRL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/selectableItemBackground"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/todayTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today"
+            android:textSize="12sp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:id="@+id/todayValueTV"
+            android:layout_below="@+id/todayTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16C"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/tomorrowRL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/tomorrowTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tomorrow"
+            android:textSize="12sp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:id="@+id/tomorrowValueTV"
+            android:layout_below="@+id/tomorrowTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16C"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pressureRL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/thirdDayTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3rd Day"
+            android:textSize="12sp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:id="@+id/thirdDayValueTV"
+            android:layout_below="@+id/thirdDayTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16C"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fourthDayRL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/fourthDayTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4th Day"
+            android:textSize="12sp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:id="@+id/fourthDayValueTV"
+            android:layout_below="@+id/fourthDayTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16C"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/fifthDayRL"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/fifthDayTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5th Day"
+            android:textSize="12sp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="8dp"/>
+
+        <TextView
+            android:id="@+id/fifthDayValueTV"
+            android:layout_below="@+id/fifthDayTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16C"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

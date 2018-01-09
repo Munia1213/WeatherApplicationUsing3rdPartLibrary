@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/minTempRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/tempMinTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="min temp."
+            android:textSize="12sp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="12dp"/>
+
+        <TextView
+            android:id="@+id/tempMinValueTV"
+            android:layout_below="@+id/tempMinTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16C"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="12sp"/>
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/maxTempRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/maxTempTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="max temp."
+            android:textSize="12sp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="12dp"/>
+
+        <TextView
+            android:id="@+id/maxTempValueTV"
+            android:layout_below="@+id/maxTempTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16C"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="12sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pressureRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/pressureTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pressure"
+            android:textSize="12sp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="12dp"/>
+
+        <TextView
+            android:id="@+id/pressureValueTV"
+            android:layout_below="@+id/pressureTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16C"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="12sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/humidityRL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="?attr/selectableItemBackground">
+
+        <TextView
+            android:id="@+id/humidityTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="humidity"
+            android:textSize="12sp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="12dp"/>
+
+        <TextView
+            android:id="@+id/humidityValueTV"
+            android:layout_below="@+id/humidityTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="16C"
+            android:textSize="16sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="12sp"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>
