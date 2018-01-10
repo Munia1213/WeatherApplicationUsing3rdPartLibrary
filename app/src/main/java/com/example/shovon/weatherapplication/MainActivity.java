@@ -1,20 +1,22 @@
 package com.example.shovon.weatherapplication;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.shovon.weatherapplication.apiNetworking.ApiClient;
-import com.example.shovon.weatherapplication.apiNetworking.ApiEndPoint;
 import com.example.shovon.weatherapplication.apiNetworking.ApiService;
 import com.example.shovon.weatherapplication.model.WeatherData;
-import com.example.shovon.weatherapplication.utils.TempConverter;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -91,7 +93,9 @@ public class MainActivity extends AppCompatActivity {
 //            }
 //        });
 
-        getWeatherByCity();
+//        String cityName = "Dhaka, bd";
+//
+//        getWeatherByCity(cityName);
     }
 
 
@@ -102,7 +106,22 @@ public class MainActivity extends AppCompatActivity {
             switch (view.getId()){
 
                 case R.id.locationChangeBtn:
-                    Toast.makeText(MainActivity.this,"change your location",Toast.LENGTH_SHORT).show();
+                   final EditText cityNameET = new EditText(MainActivity.this);
+                    AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+                    alert.setTitle("Type City name");
+                    alert.setMessage("Ex: Dhaka, BD");
+                    alert.setView(cityNameET);
+                    alert.setPositiveButton("Get Data", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            final String cityName = cityNameET.getText().toString();
+                            getWeatherByCity(cityName);
+                            Toast.makeText(MainActivity.this,"search under processing",Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    alert.setNegativeButton("Cancel", null);
+                    alert.show();
+
                     break;
 
                 case R.id.weatherFormatBtn:
@@ -141,9 +160,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private void getWeatherByCity() {
+    private void getWeatherByCity(String cityName) {
 
-        Call<WeatherData> call = apiClient.getDataByCelcius("dhaka,bd","metric", API_KEY);
+        Call<WeatherData> call = apiClient.getDataByCelcius(cityName,"metric", API_KEY);
         call.enqueue(new Callback<WeatherData>() {
             @Override
             public void onResponse(Call<WeatherData> call, Response<WeatherData> response) {
