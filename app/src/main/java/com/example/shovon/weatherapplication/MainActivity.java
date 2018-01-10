@@ -175,9 +175,9 @@ public class MainActivity extends AppCompatActivity {
 
 //                   double celcTemp = TempConverter.KenvinToCelcius(response.body().getList().get(0).getMain().getTemp());
 //                    tempTV.setText((int) celcTemp + "°"+"C");
-                    tempTV.setText(response.body().getList().get(0).getMain().getTemp().toString());
-                    tempMinValueTV.setText(response.body().getList().get(0).getMain().getTempMin().toString());
-                    maxTempValueTV.setText(response.body().getList().get(0).getMain().getTempMax().toString());
+                    tempTV.setText(response.body().getList().get(0).getMain().getTemp().toString()+"°"+"C");
+                    tempMinValueTV.setText(response.body().getList().get(0).getMain().getTempMin().toString()+"°"+"C");
+                    maxTempValueTV.setText(response.body().getList().get(0).getMain().getTempMax().toString()+"°"+"C");
                     pressureValueTV.setText(response.body().getList().get(0).getMain().getPressure().toString());
                     humidityValueTV.setText(response.body().getList().get(0).getMain().getHumidity().toString());
 
