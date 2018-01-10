@@ -26,7 +26,7 @@
             android:layout_below="@+id/tempMinTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="16C"
+            android:text="16°C"
             android:textSize="16sp"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="12sp"/>
@@ -56,7 +56,7 @@
             android:layout_below="@+id/maxTempTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="16C"
+            android:text="16°C"
             android:textSize="16sp"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="12sp"/>
@@ -84,7 +84,7 @@
             android:layout_below="@+id/pressureTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="16C"
+            android:text="67"
             android:textSize="16sp"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="12sp"/>
@@ -112,7 +112,7 @@
             android:layout_below="@+id/humidityTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="16C"
+            android:text="90"
             android:textSize="16sp"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="12sp"/>
