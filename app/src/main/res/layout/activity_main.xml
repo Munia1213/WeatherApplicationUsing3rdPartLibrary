@@ -37,10 +37,34 @@
                 android:id="@+id/weatherValuesRL"
                 android:layout_below="@+id/tempTV"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
                 layout="@layout/current_weather_values"
                 />
+
+        <RelativeLayout
+            android:id="@+id/settingsRL"
+            android:layout_below="@+id/weatherValuesRL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp">
+
+            <Button
+                android:id="@+id/locationChangeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change Location"
+                android:textSize="8sp"
+                android:layout_marginLeft="90dp"/>
+
+            <Button
+                android:id="@+id/weatherFormatBtn"
+                android:layout_toRightOf="@+id/locationChangeBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Change format"
+                android:textSize="8sp"/>
+        </RelativeLayout>
 
     </RelativeLayout>
 
@@ -57,8 +81,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="20dp"
-            layout="@layout/five_days_weather"
-            />
+            layout="@layout/five_days_weather" />
 
 
     </RelativeLayout>

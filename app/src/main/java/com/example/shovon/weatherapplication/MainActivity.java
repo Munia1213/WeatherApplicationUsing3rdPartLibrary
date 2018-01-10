@@ -28,10 +28,21 @@ public class MainActivity extends AppCompatActivity {
 
     TextView cityTV;
     TextView tempTV;
-    RelativeLayout weatherValuesRL;
+    TextView tempMinValueTV;
 
     TextView tempMinTV;
+    TextView maxTempValueTV;
+    TextView pressureValueTV;
+    TextView humidityValueTV;
 
+    Button locationChangeBtn;
+    Button weatherFormatBtn;
+
+    RelativeLayout todayRL;
+    RelativeLayout tomorrowRL;
+    RelativeLayout thirdDayRL;
+    RelativeLayout fourthDayRL;
+    RelativeLayout fifthDayRL;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,26 +53,97 @@ public class MainActivity extends AppCompatActivity {
 
         cityTV = findViewById(R.id.cityTV);
         tempTV = findViewById(R.id.tempTV);
-//        weatherValuesRL = findViewById(R.id.weatherValuesRL);
 
         tempMinTV = findViewById(R.id.tempMinTV);
+        tempMinValueTV = findViewById(R.id.tempMinValueTV);
+        maxTempValueTV = findViewById(R.id.maxTempValueTV);
+        pressureValueTV = findViewById(R.id.pressureValueTV);
+        humidityValueTV = findViewById(R.id.humidityValueTV);
+
+        locationChangeBtn = findViewById(R.id.locationChangeBtn);
+        locationChangeBtn.setOnClickListener(myOnClickListener);
+
+        weatherFormatBtn = findViewById(R.id.weatherFormatBtn);
+        weatherFormatBtn.setOnClickListener(myOnClickListener);
+
+        todayRL = findViewById(R.id.todayRL);
+        todayRL.setOnClickListener(myOnClickListener);
+
+        tomorrowRL = findViewById(R.id.tomorrowRL);
+        tomorrowRL.setOnClickListener(myOnClickListener);
+
+        thirdDayRL = findViewById(R.id.thirdDayRL);
+        thirdDayRL.setOnClickListener(myOnClickListener);
+
+        fourthDayRL = findViewById(R.id.fourthDayRL);
+        fourthDayRL.setOnClickListener(myOnClickListener);
+
+        fifthDayRL = findViewById(R.id.fifthDayRL);
+        fifthDayRL.setOnClickListener(myOnClickListener);
 
 
-        clickBtn = findViewById(R.id.clickBtn);
-        clickBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                BottomSheetDialogFragment bottomSheetDialogFragment = new CustomBottomSheetDialogFragment();
-                bottomSheetDialogFragment.show(getSupportFragmentManager(), bottomSheetDialogFragment.getTag());
-            }
-        });
+//        clickBtn = findViewById(R.id.clickBtn);
+//        clickBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                BottomSheetDialogFragment bottomSheetDialogFragment = new CustomBottomSheetDialogFragment();
+//                bottomSheetDialogFragment.show(getSupportFragmentManager(), bottomSheetDialogFragment.getTag());
+//            }
+//        });
 
         getWeatherByCity();
     }
 
+
+
+    View.OnClickListener myOnClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()){
+
+                case R.id.locationChangeBtn:
+                    Toast.makeText(MainActivity.this,"change your location",Toast.LENGTH_SHORT).show();
+                    break;
+
+                case R.id.weatherFormatBtn:
+                    Toast.makeText(MainActivity.this,"change weather format",Toast.LENGTH_SHORT).show();
+                    break;
+
+                case R.id.todayRL:
+                    BottomSheetDialogFragment bottomSheetDialogFragment = new CustomBottomSheetDialogFragment();
+                    bottomSheetDialogFragment.show(getSupportFragmentManager(), bottomSheetDialogFragment.getTag());
+                    break;
+
+                case R.id.tomorrowRL:
+                    BottomSheetDialogFragment bottomSheetDialogFragment_tmrw = new CustomBottomSheetDialogFragment();
+                    bottomSheetDialogFragment_tmrw.show(getSupportFragmentManager(), bottomSheetDialogFragment_tmrw.getTag());
+                    break;
+
+                case R.id.thirdDayRL:
+                    BottomSheetDialogFragment bottomSheetDialogFragment_third = new CustomBottomSheetDialogFragment();
+                    bottomSheetDialogFragment_third.show(getSupportFragmentManager(), bottomSheetDialogFragment_third.getTag());
+                    break;
+
+                case R.id.fourthDayRL:
+                    BottomSheetDialogFragment bottomSheetDialogFragment_fourth = new CustomBottomSheetDialogFragment();
+                    bottomSheetDialogFragment_fourth.show(getSupportFragmentManager(), bottomSheetDialogFragment_fourth.getTag());
+                    break;
+
+                case R.id.fifthDayRL:
+                    BottomSheetDialogFragment bottomSheetDialogFragment_fifth = new CustomBottomSheetDialogFragment();
+                    bottomSheetDialogFragment_fifth.show(getSupportFragmentManager(), bottomSheetDialogFragment_fifth.getTag());
+                    break;
+
+            }
+        }
+    };
+
+
+
+
     private void getWeatherByCity() {
 
-        Call<WeatherData> call = apiClient.getDataByCity("dhaka,bd", API_KEY);
+        Call<WeatherData> call = apiClient.getDataByCelcius("dhaka,bd","metric", API_KEY);
         call.enqueue(new Callback<WeatherData>() {
             @Override
             public void onResponse(Call<WeatherData> call, Response<WeatherData> response) {
@@ -72,8 +154,13 @@ public class MainActivity extends AppCompatActivity {
 
                     cityTV.setText(response.body().getCity().getName().toString());
 
-                   double celcTemp = TempConverter.KenvinToCelcius(response.body().getList().get(0).getMain().getTemp());
-                    tempTV.setText((int) celcTemp + "°"+"C");
+//                   double celcTemp = TempConverter.KenvinToCelcius(response.body().getList().get(0).getMain().getTemp());
+//                    tempTV.setText((int) celcTemp + "°"+"C");
+                    tempTV.setText(response.body().getList().get(0).getMain().getTemp().toString());
+                    tempMinValueTV.setText(response.body().getList().get(0).getMain().getTempMin().toString());
+                    maxTempValueTV.setText(response.body().getList().get(0).getMain().getTempMax().toString());
+                    pressureValueTV.setText(response.body().getList().get(0).getMain().getPressure().toString());
+                    humidityValueTV.setText(response.body().getList().get(0).getMain().getHumidity().toString());
 
                 }else {
 

@@ -10,16 +10,16 @@ import com.google.gson.annotations.SerializedName;
 public class Main {
     @SerializedName("temp")
     @Expose
-    private double temp;
+    private String temp;
     @SerializedName("temp_min")
     @Expose
-    private double tempMin;
+    private String tempMin;
     @SerializedName("temp_max")
     @Expose
-    private double tempMax;
+    private String tempMax;
     @SerializedName("pressure")
     @Expose
-    private Float pressure;
+    private String pressure;
     @SerializedName("sea_level")
     @Expose
     private Float seaLevel;
@@ -33,35 +33,35 @@ public class Main {
     @Expose
     private Float tempKf;
 
-    public double getTemp() {
+    public String getTemp() {
         return temp;
     }
 
-    public void setTemp(double temp) {
+    public void setTemp(String temp) {
         this.temp = temp;
     }
 
-    public double getTempMin() {
+    public String getTempMin() {
         return tempMin;
     }
 
-    public void setTempMin(double tempMin) {
+    public void setTempMin(String tempMin) {
         this.tempMin = tempMin;
     }
 
-    public double getTempMax() {
+    public String getTempMax() {
         return tempMax;
     }
 
-    public void setTempMax(double tempMax) {
+    public void setTempMax(String tempMax) {
         this.tempMax = tempMax;
     }
 
-    public Float getPressure() {
+    public String getPressure() {
         return pressure;
     }
 
-    public void setPressure(Float pressure) {
+    public void setPressure(String pressure) {
         this.pressure = pressure;
     }
 
